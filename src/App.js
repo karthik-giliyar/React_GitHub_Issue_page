@@ -20,7 +20,6 @@ function App() {
   let copyData =[]
   let currentData = []
   let totalNoOfPage = Math.ceil(users.length/10)
-  console.log(totalNoOfPage);
 
   const next = ()=>{
       if(pageCount<totalNoOfPage){
@@ -37,8 +36,6 @@ function App() {
     }
   }
 
-  console.log(start);
-  console.log(pageCount);
   copyData = [...users]
   currentData = copyData.splice(start,10)
   

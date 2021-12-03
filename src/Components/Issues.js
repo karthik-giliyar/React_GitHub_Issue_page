@@ -5,20 +5,19 @@ function Issues(props) {
     return (
         <>
             <div className="container">
+                <div className="container_child">
                 <div className="prev_btn" onClick={props.prev}><i className="bi bi-chevron-left"></i></div>
                 
                 <div>
                 <div className="header">
-                    <div className="headerOne">
-                        <div className="headerOne_navOne">
-                            <ul>
-                                <li className="active-list">Issues</li>
-                                <li>Pull Request</li>
-                                <li>Labels</li>
-                                <li>Milestones</li>
-                            </ul>
-                        </div>
-                    </div>    
+                    <div className="headerOne_navOne">
+                        <ul>
+                            <li className="active-list">Issues</li>
+                            <li>Pull Request</li>
+                            <li>Labels</li>
+                            <li>Milestones</li>
+                        </ul>
+                    </div>
                     <div className="headerOne_navTwo">
                         <div className="headerOne_filter">
                             <label>Filter <i className="bi bi-caret-down-fill"></i></label>
@@ -63,7 +62,7 @@ function Issues(props) {
                 </div>
                 </div>
                 <div className="next_btn" onClick={props.next}><i className="bi bi-chevron-right"></i></div>
-            
+                </div>
             </div>
         </>
     )
