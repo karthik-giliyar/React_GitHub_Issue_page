@@ -17,6 +17,18 @@ function App() {
     fetchApi()
   },[])
 
+  let stateOpenCount = 0
+  users.forEach((user,index)=>{
+
+    if(user.state === undefined) return
+    if(user.state === "open"){
+        stateOpenCount++
+    }
+  
+  })
+
+  let stateCloseCount = users.length-stateOpenCount
+
   let copyData =[]
   let currentData = []
   let totalNoOfPage = Math.ceil(users.length/10)
@@ -41,7 +53,9 @@ function App() {
   
 return (
     <>
-      <Issues users = {currentData} next={next} prev={prev}/>
+      <Issues users = {currentData} next={next} prev={prev}
+      stateOpenCount = {stateOpenCount} 
+      stateCloseCount = {stateCloseCount}/>
     </>
   );
 }

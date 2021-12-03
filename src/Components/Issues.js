@@ -36,8 +36,8 @@ function Issues(props) {
                                         <th>
                                             <div className="header issue-header">
                                                 <div className="header_open-closed">
-                                                    <div className="header_open"><i className="bi bi-exclamation-circle"></i>151  open</div>
-                                                    <div className="header_closed"><i className="bi bi-check-lg"></i>59 closed</div>
+                                                    <div className="header_open"><i className="bi bi-exclamation-circle"></i>{props.stateOpenCount} open</div>
+                                                    <div className="header_closed"><i className="bi bi-check-lg"></i>{props.stateCloseCount} closed</div>
                                                 </div>
                                                 <div className="header_issue_nav">
                                                     <ul>
