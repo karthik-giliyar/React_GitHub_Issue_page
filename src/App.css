@@ -9,6 +9,12 @@
   height: 80vh;
   padding: 1.5rem;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prev_btn,.next_btn{
+  font-size: 25px;
 }
 
 .header{
@@ -207,3 +213,4 @@ table>thead{
   color: rgb(95, 95, 95);
 }
 
+/* RESPONSIVENESS */

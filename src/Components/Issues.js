@@ -2,12 +2,12 @@ import React from 'react'
 import ListIssues from './ListIssues'
 
 function Issues(props) {
-    console.log(props.users);
     return (
         <>
             <div className="container">
-
-                {/* HEADER */}
+                <div className="prev_btn" onClick={props.prev}><i className="bi bi-chevron-left"></i></div>
+                
+                <div>
                 <div className="header">
                     <div className="headerOne">
                         <div className="headerOne_navOne">
@@ -31,7 +31,6 @@ function Issues(props) {
 
 
                 <div className="container_issues-holder">
-                    <div>
                         <table>
                             <thead>
                                     <tr>
@@ -61,10 +60,9 @@ function Issues(props) {
                                 )})}
                             </tbody>
                         </table>
-
-                    </div>
                 </div>
-
+                </div>
+                <div className="next_btn" onClick={props.next}><i className="bi bi-chevron-right"></i></div>
             
             </div>
         </>

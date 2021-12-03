@@ -5,7 +5,8 @@ import Issues  from './Components/Issues';
 
 function App() {
   const[users,setUsers]=useState([])
-
+  const[start,setStart]=useState(0)
+  const[pageCount,setPageCount]=useState(1)
 
   useEffect(()=>{
     const fetchApi = async ()=>{
@@ -16,9 +17,34 @@ function App() {
     fetchApi()
   },[])
 
+  let copyData =[]
+  let currentData = []
+  let totalNoOfPage = Math.ceil(users.length/10)
+  console.log(totalNoOfPage);
+
+  const next = ()=>{
+      if(pageCount<totalNoOfPage){
+        setPageCount(prev =>prev+1)
+        setStart(prev=>prev+10)
+      }
+  }
+
+
+  const prev = ()=>{
+    if(pageCount>1){
+      setPageCount(prev =>prev-1)
+      setStart(prev=>prev-10)
+    }
+  }
+
+  console.log(start);
+  console.log(pageCount);
+  copyData = [...users]
+  currentData = copyData.splice(start,10)
+  
 return (
     <>
-      <Issues users = {users}/>
+      <Issues users = {currentData} next={next} prev={prev}/>
     </>
   );
 }
